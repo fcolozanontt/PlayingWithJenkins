@@ -3,12 +3,12 @@ pipeline {
     stages {
         stage('Check Version') {
             steps{
-                sh 'python --version'
+                bat 'python --version'
             }
         }
         stage('Run Python Script') {
             steps {
-                sh 'python main.py'
+                bat 'python main.py'
             }
         }
         stage('Wrapping it up') {
