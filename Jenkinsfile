@@ -1,11 +1,19 @@
 pipeline {
     agent any
     stages {
+        stage('Check Version') {
+            steps{
+                sh 'python --version'
+            }
+        }
         stage('Run Python Script') {
             steps {
-                echo 'Before running'
-                sh 'C:/ProgramData/anaconda3/python.exe main.py'
-                echo 'After running'
+                sh 'python main.py'
+            }
+        }
+        stage('Wrapping it up') {
+            steps {
+                echo 'We are done here'
             }
         }
     }
